@@ -1,4 +1,4 @@
-//selecting all required elements
+// Required elements
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
@@ -101,12 +101,12 @@ quit_quiz.onclick = ()=>{
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
-// if Next Que button clicked
+// if Next Q button clicked
 next_btn.onclick = ()=>{
     if(que_count < questions.length - 1){ //if question count is less than total question length
         que_count++; //increment the que_count value
         que_numb++; //increment the que_numb value
-        showQuetions(que_count); //calling showQestions function
+        showQuetions(que_count); //calling show Q function
         queCounter(que_numb); //passing que_numb value to queCounter
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
@@ -121,11 +121,11 @@ next_btn.onclick = ()=>{
     }
 }
 
-// getting questions and options from array
+// Getting Q and options from array
 function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
-    //creating a new span and div tag for question and option and passing the value using array index
+    //Creating new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
     let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
@@ -141,7 +141,7 @@ function showQuetions(index){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
-// creating the new div tags which for icons
+// Creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
@@ -176,7 +176,7 @@ function optionSelected(answer){
 
     }
     for(i=0; i < allOptions; i++){
-        option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+        option_list.children[i].classList.add("disabled"); //once user selects option then disables all options
     }
     next_btn.classList.add("show"); //show the next button if user selected any option
 }
@@ -189,7 +189,7 @@ function showResult(){
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3){ // if user scored more than 3
-        //creating a new span tag and passing the user score number and total question number
+        //creating  new span tag and passing the user score number and total question number
         let scoreTag = '<span>and whoop! whoop!🎈, "You got '+ userScore +' out of '+ questions.length +'</span>';
         // let scoreTag = "<p> You scored "+score+" out of "+total+"</p>";
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
@@ -218,7 +218,7 @@ function startTimer(){
 }
 
 function queCounter(index){
-    //creating a new span tag and passing the question number and total question
+    //creating new span tag and passing the question number and total question
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
