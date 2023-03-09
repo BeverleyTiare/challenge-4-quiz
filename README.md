@@ -12,7 +12,7 @@ The current challenge was to enable development of skills and knowledge in the f
 To use the application, open the quiz via index. HTML file in your browser,  to view the quiz and enter responses.
 
 A screenshot depicts the quiz as below: 
-![screenshot of application](timed quiz.PNG "application main page")
+![screenshot of application](/timed quiz.PNG "application main page")
 
 The URL of the functional, deployed application on GitHub Pages: 
 https://beverleytiare.github.io/challenge-4-quiz/
